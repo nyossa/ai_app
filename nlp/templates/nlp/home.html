@@ -1,0 +1,12 @@
+<h1>Product category AI</h1>
+<p>Enter title:</p>
+<form action="{% url 'home' %}" method="post">
+    <!--formの中でボタン押されたら'home'のurlに飛んでいく-->
+    <!--そのurlはurls.pyのname指定したurl-->
+    <input type="text" name="title">
+    {% csrf_token %}<!-- csrf_tokenはformで送る時に必要なもの　-->
+    <button type="submit">Send</button>
+</form>
+{% if title %}
+    <h1>Prediction: {{ title }}</h1>
+{% endif %}
