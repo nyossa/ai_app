@@ -9,24 +9,32 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
+import environ
 import os
+
+# .envファイルの読み込み
+env = environ.Env()
+env.read_env('.env')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+#BASE_DIR：/Users/yoshizawanaoaki/python_test/workspace/ai-app-dev/ai_app
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+#SECRET_KEYはdjangoでパスワードを設定するときに使用される。export hoge='$fi02qg-j!s+2n1k(&me=puxq3sehlm@(th9up4h&e5+n+4#ye'
+
 SECRET_KEY = '$fi02qg-j!s+2n1k(&me=puxq3sehlm@(th9up4h&e5+n+4#ye'
+#SECRET_KEY = env('SECRET_KEY') キーの先頭の$があるため変数と見なされてる。
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = env('DEBUG')
 
+#ALLOWED_HOSTSはDjangoがアクセスを受けるIPアドレスを指定
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -68,12 +76,16 @@ TEMPLATES = [
     },
 ]
 
+#WSGI_APPLICATIONはウェブサーバーとアプリケーションサーバーを結びつける仲介役のような役割を果たすファイルの場所。
+#djangoではウェブサーバーとアプリケーションサーバーの二つのサーバーが使われる
 WSGI_APPLICATION = 'ai_app.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+#Djangoで使うデータベースの情報
+#Djangoでは開発用のデータベースサーバーが準備されており、デフォルトではこのサーバーの情報が書かれている。
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

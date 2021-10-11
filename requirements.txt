@@ -1,4 +1,4 @@
-pandas==1.3.3
-scikit-learn==0.24.2
-Django==2.2.5
+#開発環境で動作させるのに必要なライブラリを導入
+-r requirements-dev.txt
+#本番環境用
 gunicorn#アプリケーションサーバーで本番環境で使用。

@@ -1,1 +1,4 @@
 rdmf.pickle
+.env
+#.DS_StoreはMACが自動生成するディレクトリに関する情報
+.DS_Store
