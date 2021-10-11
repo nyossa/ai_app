@@ -26,8 +26,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEYはdjangoでパスワードを設定するときに使用される。export hoge='$fi02qg-j!s+2n1k(&me=puxq3sehlm@(th9up4h&e5+n+4#ye'
 
-SECRET_KEY = '$fi02qg-j!s+2n1k(&me=puxq3sehlm@(th9up4h&e5+n+4#ye'
-#SECRET_KEY = env('SECRET_KEY') キーの先頭の$があるため変数と見なされてる。
+#SECRET_KEY = '$fi02qg-j!s+2n1k(&me=puxq3sehlm@(th9up4h&e5+n+4#ye'
+SECRET_KEY = env('SECRET_KEY') #キーの先頭の$があるため変数と見なされてる。
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
