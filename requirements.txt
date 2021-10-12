@@ -1,4 +1,4 @@
 #開発環境で動作させるのに必要なライブラリを導入
 -r requirements-dev.txt
 #本番環境用
-gunicorn#アプリケーションサーバーで本番環境で使用。
+gunicorn
