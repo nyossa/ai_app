@@ -34,7 +34,8 @@ SECRET_KEY = env('SECRET_KEY') #キーの先頭の$があるため変数と見�
 DEBUG = env('DEBUG')
 
 #ALLOWED_HOSTSはDjangoがアクセスを受けるIPアドレスを指定
-ALLOWED_HOSTS = ["*"]
+#ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 # Application definition
 
